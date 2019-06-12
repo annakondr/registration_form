@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 const body = document.querySelector('body');
 const nameInput = document.querySelector('.name');
 const phoneNumber = document.querySelector('.number');
@@ -15,9 +15,9 @@ function validateName() {
   if (!nameValidationRE.test(valueName) ) {
     nameInput.classList.add('invalid');
     nameInput.classList.remove('valid');
-    return false
+    return false;
   }
-  nameInput.classList.add('valid')
+  nameInput.classList.add('valid');
 }
 
 phoneNumber.addEventListener('change',validateNumber);
@@ -26,29 +26,30 @@ function validateNumber() {
   if (!numberValidationRE.test(valueNumber) ) {
     phoneNumber.classList.remove('valid');
     phoneNumber.classList.add('invalid');
-    return false
+    return false;
   }
-  phoneNumber.classList.add('valid')
+  phoneNumber.classList.add('valid');
 }
 
 checkboxInfo.addEventListener('change', hideInfo);
 function hideInfo () {
   phoneRegionInfo.hidden = !phoneRegionInfo.hidden;
 }
-//+380506232387
-//anna kondr
+
 const homeCityList = {
-  Center: ['Select home city', 'Cherkasy', 'Dnipro', 'Kropyvnytskyi', 'Poltava', 'Vinnytsia', 'Zhytomyr', 'Not in the list'],
+  Center: ['Select home city', 'Cherkasy', 'Dnipro', 'Kropyvnytskyi',
+    'Poltava', 'Vinnytsia', 'Zhytomyr', 'Not in the list'],
   North: ['Select home city', 'Chernihiv', 'Sumy', 'Not in the list'],
   East: ['Select home city', 'Donetsk', 'Kharkiv', 'Luhansk', 'Not in the list'],
   South: ['Select home city', 'Kherson', 'Mykolaiv', 'Odesa', 'Zaporizhzhia', 'Not in the list'],
-  West: ['Select home city', 'Chernivtsi', 'Ivano-Frankivsk', 'Khmelnytskyi', 'Lutsk', 'Lviv', 'Rivne', 'Ternopil', 'Uzhhorod', 'Not in the list']
+  West: ['Select home city', 'Chernivtsi', 'Ivano-Frankivsk', 'Khmelnytskyi',
+    'Lutsk', 'Lviv', 'Rivne', 'Ternopil', 'Uzhhorod', 'Not in the list']
 };
 
 const form = document.querySelector('.form');
 const selectCity = document.querySelector('.select-home');
-const selectHomeCity = document.querySelector('.select-homecity')
-selectHomeCity.classList.add('invisible')
+const selectHomeCity = document.querySelector('.select-homecity');
+selectHomeCity.classList.add('invisible');
 regionSelection.addEventListener('change', showCityList);
 function showCityList() {
   const citiesList = homeCityList[regionSelection.value];
@@ -59,11 +60,12 @@ function showCityList() {
 
   if (citiesList) {
     selectHomeCity.classList.remove('invisible');
-    citiesList.forEach(option =>
-      selectCity.insertAdjacentHTML('beforeend', `<option>${option}</option>>`))
+    citiesList.forEach((option) =>{
+      selectCity.insertAdjacentHTML('beforeend', `<option>${option}</option>>`)
+    });
     selectCity.firstChild.selected = true;
     selectCity.firstChild.disabled = true;
-    submitButton.disabled = true
+    submitButton.disabled = true;
   } else {
     selectHomeCity.classList.add('invisible');
   }
