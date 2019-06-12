@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Move The Ball</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<form class="form">
+  <label for="name">
+    Full name
+  </label>
+  <input type="text" class="name" placeholder="First name Last name" id="name">
+  <div class="specify-info">
+    <input type="checkbox" class="checkbox" value="specify info" id="checkbox">
+    <label for="checkbox">
+      <p>I would prefer not to specify my
+        phone number and home town</p><br>
+    </label>
+  </div>
+
+  <div class="phone-region">
+    <label for="phone">
+      Your phone number
+    </label>
+    <input type="text" class="number" id="phone" placeholder="+380XXXXXXXXX">
+    <label for="region">
+      Your region
+    </label>
+    <select class="region" id="region">
+      <option value selected disabled>Select your region</option>
+      <option value="Kyiv">Kyiv</option>
+      <option value="Center">Center</option>
+      <option value="North">North</option>
+      <option value="East">East</option>
+      <option value="South">South</option>
+      <option value="West">West</option>
+    </select>
+    <div class="select-homecity">
+      <label for="homecity" class="lableHomeCity">
+        Your home city
+      </label>
+        <select class="select-home" id="homecity">
+          <option value selected disabled data-region="select">Select home city</option>
+        </select>
+    </div>
+  </div>
+
+    <br><button class="submit" type="button">Submit</button>
+  </form>
+
+
+</div>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
